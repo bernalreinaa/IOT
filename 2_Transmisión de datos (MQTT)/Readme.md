@@ -9,9 +9,9 @@ El despliegue se realiza mediante la gestión de paquetes del sistema operativo 
 
 
 ## 1. Actualizar repositorios e instalar el bróker y clientes
-Bash
+```Bash
 sudo apt update && sudo apt install mosquitto mosquitto-clients -y
-
+```
 ## 2. Habilitar el inicio automático del servicio al arrancar el sistema
 sudo systemctl enable mosquitto
 Para asegurar la interoperabilidad en la red local privada, el archivo de configuración (mosquitto.conf) se ha ajustado con los siguientes parámetros:
@@ -32,7 +32,8 @@ Ejemplo real: calidad_aire temperatura=24.5,humedad=40.2,aqi=1,eco2=400
 🔍 Verificación y Monitorización
 Para validar que la cadena de datos desde el hardware de campo hasta el servidor es correcta, se utiliza el cliente de suscripción integrado directamente en la terminal de la Raspberry Pi:
 
-Bash
 # Suscribirse al tópico de sensores en modo detallado (verbose) para ver el flujo en tiempo real
+```Bash
 mosquitto_sub -h localhost -t "esp32/sensores" -v
+```
 Este comando permite confirmar que el bróker está operando como puente de datos de forma estable antes de proceder a la fase de visualización en Grafana.
