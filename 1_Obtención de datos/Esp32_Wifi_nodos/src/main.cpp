@@ -52,8 +52,8 @@
 
 
   // Credenciales WiFi
-  const char* ssid = "DIGIFIBRA-P7E7";     
-  const char* password = "UtN4RFRSh427";   
+  const char* ssid = "Tu ssid";     
+  const char* password = "Tu contraseña";   
 
 
 
@@ -87,7 +87,6 @@
 
 
 // Configuración MQTT
-const char* mqtt_server = "192.168.1.128"; // La IP de tu PC que vimos antes
 const char* mqtt_topic  = "esp32/sensores";
 
 WiFiClient espClient;
